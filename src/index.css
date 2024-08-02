@@ -1,0 +1,107 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bulma-body-background-color: hsl(221 14% 9%);
+}
+
+[data-theme="pink"] {
+  --bulma-scheme-main: hsl(340, 71%, 60%);
+}
+
+[data-theme="yellow"] {
+  --bulma-scheme-main: hsl(48, 71%, 55%);
+}
+
+[data-theme="blue"] {
+  --bulma-scheme-main: hsl(204, 86%, 60%);
+}
+
+html,
+body {
+  overflow: auto;
+  height: 100vh;
+}
+
+.bouncing {
+  position: relative;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    top: -10px;
+    animation-timing-function: ease-in;
+  }
+  50% {
+    top: 10px;
+    animation-timing-function: ease-out;
+  }
+}
+
+.bookmark {
+  position: fixed;
+  top: 5%;
+  width: 50px;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 20;
+  cursor: pointer;
+
+  &.left {
+    left: -5px;
+  }
+
+  &.right {
+    right: -5px;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  width: 700px;
+  height: 100%;
+  background-color: var(--bulma-body-background-color);
+  transition: all 0.3s;
+  z-index: 1000;
+  overflow: auto;
+
+  &.left {
+    left: -700px;
+
+    &.active {
+      left: 0;
+    }
+  }
+
+  &.right {
+    right: -700px;
+
+    &.active {
+      right: 0;
+    }
+  }
+}
+
+.tabs li.is-active a {
+  border-bottom-color: var(--bulma-scheme-main);
+  color: var(--bulma-scheme-main);
+}
+
+.min-w-770 {
+  min-width: 770px;
+}
+
+.max-w-400 {
+  max-width: 400px;
+}
+
+.px-14-5 {
+  padding-left: 14.5px;
+  padding-right: 14.5px;
+}
